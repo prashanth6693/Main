@@ -1,0 +1,122 @@
+table 'SuperMarket Sales'
+	lineageTag: 9c1457ef-272b-4067-9809-5962eb96d236
+
+	column 'Order No'
+		dataType: int64
+		formatString: 0
+		lineageTag: 05716a91-e091-4ec7-aff6-942d35881d4d
+		summarizeBy: sum
+		sourceColumn: Order No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 4cce6c61-0f6d-429f-a401-2898542b2a15
+		summarizeBy: none
+		sourceColumn: Order Date
+
+		variation Variation
+			isDefault
+			relationship: 2b39a7eb-c2e9-4df4-b63c-ff929affa745
+			defaultHierarchy: LocalDateTable_2bc22319-0ff1-44eb-a6ec-38647f319b96.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 07eb0ec0-13e4-42b0-9e4a-784359e51c44
+		summarizeBy: none
+		sourceColumn: Ship Date
+
+		variation Variation
+			isDefault
+			relationship: a8c6a93b-2bb9-4504-994b-4dfe8b3c2b1b
+			defaultHierarchy: LocalDateTable_69224622-9c9e-41b4-819a-e73c2f342caf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Retail Price (USD)'
+		dataType: double
+		lineageTag: 6db132ca-39d0-4439-b246-0d29229f42ba
+		summarizeBy: sum
+		sourceColumn: Retail Price (USD)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Quantity'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cd9bf58-3766-4658-a13c-3b0da1ab5722
+		summarizeBy: sum
+		sourceColumn: Order Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax (USD)'
+		dataType: double
+		lineageTag: 78f71b2d-ffa5-4397-84c7-67d7b9dec9c2
+		summarizeBy: sum
+		sourceColumn: Tax (USD)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total (USD)'
+		dataType: double
+		lineageTag: f17f6ebc-6514-4520-af9f-17ed46e0c288
+		summarizeBy: sum
+		sourceColumn: Total (USD)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer F.name'
+		dataType: string
+		lineageTag: 28bb9071-00d8-425f-b39f-669873c6b7d3
+		summarizeBy: none
+		sourceColumn: Customer F.name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer S.name'
+		dataType: string
+		lineageTag: bd91efce-e726-4322-8344-747082abe39a
+		summarizeBy: none
+		sourceColumn: Customer S.name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SuperMarket Sales' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\v-prasare\Downloads\Supermarket-Sales-Sample-Data.xlsx"), null, true),
+				    #"SuperMarket Sales_Sheet" = Source{[Item="SuperMarket Sales",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"SuperMarket Sales_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Excel Sample Data", type text}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}}),
+				    #"Removed Top Rows" = Table.Skip(#"Changed Type",5),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Order No", Int64.Type}, {"Order Date", type date}, {"Customer Name", type text}, {"Ship Date", type date}, {"Retail Price (USD)", type number}, {"Order Quantity", Int64.Type}, {"Tax (USD)", type number}, {"Total (USD)", type number}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type1", "Customer Name", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Customer Name.1", "Customer Name.2"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Customer Name.1", type text}, {"Customer Name.2", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type2",{{"Customer Name.1", "Customer F.name"}, {"Customer Name.2", "Customer S.name"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

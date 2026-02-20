@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Silver_Healthcare_Transformations"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8e2b46ca-6cda-aa02-42c3-49f51b441458"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDashboard",
+    "displayName": "Monitoring_RTDashboard",
+    "description": "Monitoring_RTDashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1a436509-89e4-8b04-4fe0-dbebd7119ae6"
+  }
+}

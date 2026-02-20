@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "BronzeToSilver",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "billing_raw": {
+      "queryId": "d1ee8a9d-19ac-4801-aed9-13be5562614c",
+      "queryName": "billing_raw"
+    },
+    "doctors_raw": {
+      "queryId": "05136869-64e9-42d0-afc2-ddc2ea20701f",
+      "queryName": "doctors_raw"
+    },
+    "patients_raw": {
+      "queryId": "bdf62017-85d5-43a0-8e18-977be3a52668",
+      "queryName": "patients_raw"
+    },
+    "visits_raw": {
+      "queryId": "1bd250d6-201b-49c7-bdec-e84855e37d57",
+      "queryName": "visits_raw"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"ad287836-affa-4bd5-a8bd-db339ee13733\",\"DatasourceId\":\"55080474-b962-45f6-ab0c-2a1868d3fce5\"}"
+    }
+  ]
+}

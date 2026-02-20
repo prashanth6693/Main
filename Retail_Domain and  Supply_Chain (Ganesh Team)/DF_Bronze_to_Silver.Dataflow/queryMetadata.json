@@ -1,0 +1,27 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "DF_Bronze_to_Silver",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "retail_events": {
+      "queryId": "5461e983-f624-4946-abe0-39522591b391",
+      "queryName": "retail_events",
+      "loadEnabled": false
+    },
+    "retail_events_DataDestination": {
+      "queryId": "abfe0628-90be-463f-8eca-71c8eba5b81d",
+      "queryName": "retail_events_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"ad287836-affa-4bd5-a8bd-db339ee13733\",\"DatasourceId\":\"a6026209-5000-403e-b107-a4deb4795463\"}"
+    }
+  ]
+}

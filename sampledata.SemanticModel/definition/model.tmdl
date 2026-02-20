@@ -1,0 +1,19 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["SuperMarket Sales"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table 'SuperMarket Sales'
+ref table DateTableTemplate_de612b15-2b63-4201-9a2b-7df1c47d523a
+ref table LocalDateTable_2bc22319-0ff1-44eb-a6ec-38647f319b96
+ref table LocalDateTable_69224622-9c9e-41b4-819a-e73c2f342caf
+
+ref cultureInfo en-IN
+

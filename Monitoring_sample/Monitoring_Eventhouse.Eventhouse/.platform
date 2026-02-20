@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "Monitoring_Eventhouse",
+    "description": "Monitoring_Eventhouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c0ffaf52-164f-b5c6-4c3e-360ec603f3d8"
+  }
+}

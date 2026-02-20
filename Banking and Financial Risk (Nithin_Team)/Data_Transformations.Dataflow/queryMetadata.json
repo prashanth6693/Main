@@ -1,0 +1,44 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Data_Transformations",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "raw_accounts": {
+      "queryId": "8d3a3894-ff8a-4f26-a592-3b55e0c50a77",
+      "queryName": "raw_accounts"
+    },
+    "raw_branches": {
+      "queryId": "f5bf575d-84dc-40a9-bc63-967719058901",
+      "queryName": "raw_branches"
+    },
+    "raw_credit_bureau": {
+      "queryId": "9866f1e5-102f-4ff0-8fbd-84287144bfb3",
+      "queryName": "raw_credit_bureau"
+    },
+    "raw_customers": {
+      "queryId": "25ea571d-6489-422e-84e0-8229b3398441",
+      "queryName": "raw_customers"
+    },
+    "raw_loan_payments": {
+      "queryId": "eb2b2fdd-4a54-470e-9e78-8ea23cc6dc6f",
+      "queryName": "raw_loan_payments"
+    },
+    "raw_loans": {
+      "queryId": "588f2ada-1d31-4b29-ba3e-f4027e01b3c5",
+      "queryName": "raw_loans"
+    },
+    "raw_transactions": {
+      "queryId": "4b57867d-bc0b-4f48-bcd3-82b94db01465",
+      "queryName": "raw_transactions"
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"ad287836-affa-4bd5-a8bd-db339ee13733\",\"DatasourceId\":\"0adfa8f6-2063-439a-8b59-1e4567781111\"}"
+    }
+  ]
+}

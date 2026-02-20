@@ -1,0 +1,92 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Silver_Healthcare_Transformations",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "billing": {
+      "queryId": "5746ea2b-4a84-41ef-ae31-ddffb30dfbd8",
+      "queryName": "billing",
+      "loadEnabled": false
+    },
+    "departments": {
+      "queryId": "cdac0dd2-8c53-4432-8deb-f1fc08783ca0",
+      "queryName": "departments"
+    },
+    "doctors": {
+      "queryId": "57725632-e15c-4bf1-b49d-b8f0ec67f4bb",
+      "queryName": "doctors"
+    },
+    "patient_visits": {
+      "queryId": "26139dfe-478f-47ec-9d88-b77d5f4074dd",
+      "queryName": "patient_visits"
+    },
+    "patients": {
+      "queryId": "e2fc9924-ff94-4da5-9941-ad561c7afc98",
+      "queryName": "patients"
+    },
+    "silver_doctors": {
+      "queryId": "db23698f-1c18-47c6-bc87-285052dbbc80",
+      "queryName": "silver_doctors",
+      "loadEnabled": false
+    },
+    "silver_departments": {
+      "queryId": "1788bc4f-557a-4d03-bfc9-5970cf0c7416",
+      "queryName": "silver_departments",
+      "loadEnabled": false
+    },
+    "silver_billing": {
+      "queryId": "8525867b-f8e0-4137-accf-b278f5ad83b7",
+      "queryName": "silver_billing",
+      "loadEnabled": false
+    },
+    "silver_billing_DataDestination": {
+      "queryId": "ed93ff47-9b1e-4641-a1d9-883d7d5c4204",
+      "queryName": "silver_billing_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "silver_patients": {
+      "queryId": "1d8d11e0-4f9c-45a4-ae9f-f697fb3b7913",
+      "queryName": "silver_patients",
+      "loadEnabled": false
+    },
+    "silver_patients_DataDestination": {
+      "queryId": "cd6b5e14-549f-407a-b6da-1d91f73b2f7b",
+      "queryName": "silver_patients_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "silver_departments_DataDestination": {
+      "queryId": "0699c841-43c8-41ba-979c-6562ae6c7e92",
+      "queryName": "silver_departments_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "silver_doctors_DataDestination": {
+      "queryId": "ff4d73be-4ed6-408f-a10c-3d5d550f14cc",
+      "queryName": "silver_doctors_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "silver_patient_visits": {
+      "queryId": "77b605f6-6f25-4e5e-b2fc-d6878550ba5f",
+      "queryName": "silver_patient_visits",
+      "loadEnabled": false
+    },
+    "silver_patient_visits_DataDestination": {
+      "queryId": "44854535-9afc-4a57-a45a-1db121922af4",
+      "queryName": "silver_patient_visits_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"ad287836-affa-4bd5-a8bd-db339ee13733\",\"DatasourceId\":\"4a31019b-d534-455f-a5a6-eadf19530bc2\"}"
+    }
+  ]
+}
